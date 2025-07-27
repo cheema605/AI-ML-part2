@@ -1,30 +1,29 @@
 
 ---
 
-### 📁 `task_2_churn_pipeline/README.md`
+### 📁 `task_3_multimodal_housing/README.md`
 ```markdown
-# 📊 Customer Churn Prediction Pipeline
+# 🏠 Multimodal Housing Price Prediction (Images + Tabular)
 
 ## Objective
-Build a robust, production-ready machine learning pipeline to predict customer churn from structured data.
+Predict house prices using a combination of tabular data and simulated image inputs.
 
 ## Dataset
-- **Source**: [Telco Customer Churn (Kaggle)](https://www.kaggle.com/blastchar/telco-customer-churn)
-- **Features**: Demographics, services, tenure, charges, etc.
+- Simulated images (randomly generated or downloaded)
+- Tabular features: area, location, rooms, condition, etc.
 
 ## Methodology
-- Data preprocessing (imputation, encoding, scaling)
-- Model selection: Logistic Regression and Random Forest
-- Hyperparameter tuning using GridSearchCV
-- Pipeline created using `scikit-learn.Pipeline`
-- Exported model with `joblib`
+- CNN (e.g., simple ConvNet) for image embeddings
+- MLP for tabular feature processing
+- Concatenated embeddings → dense layers → regression output
+- Evaluated with MAE and RMSE
 
 ## Results
-- **Best Model**: Random Forest
-- **Accuracy**: ~80%
-- **AUC**: ~0.85
+- **MAE**: ~15,000
+- **RMSE**: ~20,000
+- Outperformed tabular-only baseline
 
 ## How to Run
 1. Install dependencies:
    ```bash
-   pip install pandas scikit-learn matplotlib seaborn joblib
+   pip install numpy pandas torch torchvision matplotlib
